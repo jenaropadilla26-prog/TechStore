@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d18">
+  <meta name="description" content="Explora accesorios tecnológicos para tu día a día en TechStore. Arma tu pedido y consúltalo por WhatsApp.">
+  <title>TechStore | Tecnología para tu día a día</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="./static/estilos.css">
+  <script src="./static/app.js" defer></script>
+</head>
+<body>
+  <div class="announcement"><span class="announcement-dot"></span> Tecnología que conecta tu día a día <span class="announcement-separator">·</span> Atención personalizada por WhatsApp</div>
+  <header class="site-header" id="inicio">
+    <div class="header-inner wrap">
+      <a href="#inicio" class="brand" aria-label="TechStore, ir al inicio"><span class="brand-mark" aria-hidden="true">T<span>.</span></span><span>tech<span class="brand-accent">store</span><small>ACCESORIOS & TECNOLOGÍA</small></span></a>
+      <nav class="desktop-nav" aria-label="Navegación principal"><a href="#inicio" class="nav-active">Inicio</a><a href="#catalogo">Productos</a><a href="#beneficios">¿Por qué elegirnos?</a></nav>
+      <div class="header-actions"><button class="icon-button mobile-search" type="button" id="searchShortcut" aria-label="Buscar productos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button><button class="cart-trigger" id="openCart" type="button" aria-label="Abrir carrito"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2l2.2 11h11.5l2.1-8H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><span class="cart-label">Mi carrito</span><span id="cartCount" class="count" aria-live="polite">0</span></button></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap" aria-labelledby="heroTitle">
+      <div class="hero-content"><span class="eyebrow"><span class="sparkle">✦</span> TU MUNDO, MÁS CONECTADO</span><h1 id="heroTitle">Eleva tu día<br>con la <em>mejor</em><br>tecnología<span class="period">.</span></h1><p>Accesorios que combinan diseño, funcionalidad y ese toque que hace la diferencia. Encuentra tu próximo favorito.</p><div class="hero-buttons"><a href="#catalogo" class="button button-primary">Explorar productos <span aria-hidden="true">↗</span></a><a href="#beneficios" class="button button-text">Conócenos <span aria-hidden="true">→</span></a></div><div class="hero-foot"><div class="hero-stars" aria-hidden="true">✦ ✦ ✦</div><span>Diseñados para acompañarte todos los días</span></div></div>
+      <div class="hero-visual" aria-label="Auriculares y accesorios tecnológicos"><div class="hero-glow"></div><div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div><div class="hero-image-frame"><img src="https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=1100&q=85&auto=format" alt="Auriculares inalámbricos premium" fetchpriority="high"></div><div class="floating-tag"><span class="tag-icon">✳</span><span><strong>Tu estilo. Tu tecnología.</strong><small>Accesorios para cada momento</small></span></div><span class="hero-decoration decoration-a">✦</span><span class="hero-decoration decoration-b">✧</span></div>
+    </section>
+
+    <section class="benefit-strip" id="beneficios" aria-label="Ventajas de TechStore"><div class="wrap benefit-inner"><div class="benefit"><span class="benefit-icon">✧</span><div><strong>Selección con estilo</strong><small>Lo esencial, bien elegido</small></div></div><div class="benefit"><span class="benefit-icon">◎</span><div><strong>Compra sencilla</strong><small>Arma tu pedido en minutos</small></div></div><div class="benefit"><span class="benefit-icon">↗</span><div><strong>Atención directa</strong><small>Conversa por WhatsApp</small></div></div></div></section>
+
+    <section class="catalog-section wrap" id="catalogo" aria-labelledby="catalogTitle"><div class="section-top"><div><span class="section-kicker">DESCUBRE NUESTRA SELECCIÓN</span><h2 id="catalogTitle">Encuentra tu <em>próximo favorito.</em></h2><p>Pequeños detalles que hacen grandes diferencias.</p></div><div class="product-counter" id="resultCount" aria-live="polite">4 productos</div></div>
+      <div class="toolbar"><div class="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input id="searchInput" type="search" placeholder="Buscar productos..." aria-label="Buscar productos" autocomplete="off"></div><div class="filters" role="group" aria-label="Filtrar por categoría"><button type="button" data-filter="Todos" class="filter active" aria-pressed="true">Todos</button><button type="button" data-filter="Audio" class="filter" aria-pressed="false">Audio</button><button type="button" data-filter="Cargadores" class="filter" aria-pressed="false">Cargadores</button><button type="button" data-filter="Accesorios" class="filter" aria-pressed="false">Accesorios</button></div><label class="sort-label"><span>Ordenar:</span><select id="sortSelect" aria-label="Ordenar productos"><option value="featured">Destacados</option><option value="priceAsc">Menor precio</option><option value="priceDesc">Mayor precio</option><option value="name">Nombre A-Z</option></select></label></div>
+      <div class="products-grid" id="productGrid"></div><div class="empty-results" id="emptyResults" hidden><span>⌕</span><h3>No encontramos resultados</h3><p>Prueba otro término o cambia la categoría.</p><button type="button" class="button button-primary" id="clearFilters">Ver todos los productos</button></div>
+    </section>
+
+    <section class="cta-section wrap"><div class="cta-copy"><span class="section-kicker">ESTAMOS PARA AYUDARTE</span><h2>¿Tienes dudas?<br><em>Hablemos.</em></h2><p>¿Necesitas ayuda para elegir? Escríbenos y consulta lo que necesites antes de comprar.</p><button type="button" class="button button-white" id="contactButton">Consultar por WhatsApp ↗</button></div><div class="cta-art" aria-hidden="true"><span class="cta-ring"></span><span class="cta-bubble">✳</span><span class="cta-mini">TECH<span>STORE.</span></span></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-main"><div><a href="#inicio" class="brand footer-brand"><span class="brand-mark">T<span>.</span></span><span>tech<span class="brand-accent">store</span><small>ACCESORIOS & TECNOLOGÍA</small></span></a><p>Accesorios que conectan con tu estilo.</p></div><div class="footer-links"><a href="#inicio">Inicio</a><a href="#catalogo">Productos</a><a href="#beneficios">Beneficios</a></div></div><div class="wrap footer-bottom"><span>© <span id="year">2026</span> TechStore. Todos los derechos reservados.</span><span>Hecho con pasión por la tecnología ✦</span></div></footer>
+
+  <div class="drawer-backdrop" id="cartBackdrop" hidden></div><aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true" tabindex="-1"><div class="drawer-top"><div><small>TU SELECCIÓN</small><h2 id="cartTitle">Mi carrito <span id="drawerCount">(0)</span></h2></div><button id="closeCart" class="close-button" type="button" aria-label="Cerrar carrito">×</button></div><div id="cartItems" class="drawer-items"></div><div class="drawer-bottom"><div class="subtotal"><span>Subtotal</span><strong id="cartTotal">$0</strong></div><p class="checkout-note">El pedido se confirma directamente por WhatsApp. Precios en COP; disponibilidad y envío por confirmar.</p><button type="button" class="button button-primary checkout-button" id="checkoutButton">Solicitar pedido <span>↗</span></button><button type="button" id="keepShopping" class="keep-shopping">Seguir comprando</button></div></aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

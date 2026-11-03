@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Laboratorio S3</title>
+    <style>
+        body {
+            background-color: #0b8043;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .btn-subir {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .caja-archivos {
+            background: rgba(255, 255, 255, 0.2);
+            width: 60%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Universidad Cooperativa - Electiva 4</h1>
+
+    <div class="container">
+        <!-- Selector de archivo y botón -->
+        <input type="file" id="archivo">
+        <button class="btn-subir" onclick="subir()">Subir archivo</button>
+    </div>
+
+    <!-- Sección de Archivos en el Bucket -->
+    <div class="caja-archivos">
+        <h2>Archivos en el Bucket</h2>
+        <ul id="lista-archivos">
+            <!-- Los archivos se muestran aquí -->
+        </ul>
+    </div>
+
+    <script>
+        async function subir() {
+            const selector = document.getElementById("archivo");
+            if (!selector.files.length) {
+                alert("Por favor selecciona un archivo primero.");
+                return;
+            }
+            const archivo = selector.files[0];
+
+            // 1. Obtener la URL pre-firmada desde API Gateway
+            const respuesta = await fetch(
+                "https://TU-API-URL.execute-api.us-east-1.amazonaws.com/prod/generarURL?archivo=" + encodeURIComponent(archivo.name)
+            );
+            const datos = await respuesta.json();
+
+            // 2. Subir directamente al Bucket Privado
+            const subida = await fetch(datos.url, {
+                method: "PUT",
+                body: archivo
+            });
+
+            if (subida.ok) {
+                alert("Archivo cargado correctamente");
+            } else {
+                alert("Error al subir el archivo");
+            }
+        }
+    </script>
+</body>
+</html>

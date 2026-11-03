@@ -1,0 +1,1 @@
+La antigua plantilla de laboratorio S3 fue retirada de templates/ para que Flask muestre TechStore. Se conserva en laboratorio_s3.html. Tiene un endpoint de API de ejemplo que debe configurarse si deseas usarla.
