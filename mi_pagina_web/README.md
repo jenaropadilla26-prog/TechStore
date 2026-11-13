@@ -28,4 +28,8 @@ Edita el array `PRODUCTS` dentro de `static/app.js` para cambiar los productos, 
 - `s3_Menu.py`: utilidad de consola para gestionar archivos de un bucket S3 (no forma parte de la tienda).
 - `legacy/laboratorio_s3.html`: página antigua de laboratorio S3, con una API de ejemplo sin configurar; se conserva para referencia y no se usa en el sitio.
 
+## Utilidad de consola S3
+
+Antes de ejecutar `s3_Menu.py`, define `AWS_S3_EXPECTED_BUCKET_OWNER` con el ID de 12 dígitos de la cuenta AWS propietaria del bucket `jahp-pagina`. Confirma ese ID con el propietario del bucket o en la consola de AWS; el programa no contiene un ID predeterminado. También se requieren credenciales AWS configuradas mediante los mecanismos estándar de Boto3.
+
 El sitio carga fotos externas desde Unsplash y, cuando hay Internet, las fuentes desde Google Fonts. Si necesitas que el sitio funcione completamente sin conexión, sustituye las imágenes por archivos locales.
